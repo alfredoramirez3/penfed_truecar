@@ -1,0 +1,114 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Mar  3 10:00:29 2020
+
+@author: ar3
+"""
+
+# main page
+# when less than 30 vehicles
+listings = soup.find_all('a', {'data-test': 'vehicleListingCard'})
+listing0 = listings[0]
+
+# title_
+listing0.h4.text
+Out[30]: '2014 Mazda MX-5 Miata Club Automatic'
+# detail_url
+listing0['href']
+Out[31]: '/used-cars-for-sale/listing/JM1NC2LF2E0237153/2014-mazda-mx-5-miata/'
+
+# when more than 30 vehicles
+listings = soup.find_all('a', {'data-test':'usedListing'})
+
+# title_
+listing0.find('span', {'class':'vehicle-card-year'}).text
+Out[94]: '2014'
+
+listing0.find('span', {'class':'vehicle-header-make-model'}).text
+Out[100]: 'Mazda MX-5 Miata'
+
+# detail_url
+listing0['href']
+Out[81]: '/used-cars-for-sale/listing/JM1NC2LF2E0237153/2014-mazda-mx-5-miata/'
+
+# next_page_url
+<a data-qa="Pagination-directional-next" data-test="Pagination-directional-next" class="page-link" href="/used-cars-for-sale/listings/mazda/mx-5-miata/year-2010-max/price-below-15000/location-san-antonio-tx/?mileageHigh=125000&amp;page=2&amp;priceRating[]=well_below_market&amp;priceRating[]=below_market&amp;priceRating[]=at_market&amp;searchRadius=5000&amp;transmission[]=Automatic"><svg viewBox="0 0 24 24" class="icon icon-color-default" style="width: 24px; height: 24px; stroke-width: 1px;" data-qa="IconAngleRight"><path d="M9.37 7.17l5.1 5.1-5.1 5.11"></path></svg></a>
+soup.find('a', {'data-test': 'Pagination-directional-next'})
+soup.find('a', {'data-test':'Pagination-directional-next'})['href']
+
+
+# vehicle page
+soup.find('strong', {'data-test':'vehiclePrice'}).text
+Out[85]: '$14,396'
+
+soup.find('div', {'class':'heading-3'}).text
+Out[22]: '2014 Mazda MX-5 Miata'
+
+soup.find('div', {'class':'heading-4'}).text
+Out[23]: 'Club Automatic'
+
+soup.find('span', {'data-qa':'used-vdp-header-location'}).text
+Out[25]: 'San Antonio, TX'
+
+soup.find('span', {'data-qa':'used-vdp-header-miles'}).text
+Out[26]: '11,840 Miles'
+
+soup.find('div', {'data-qa':'vehicle-overview-item-Exterior Color'}).li.text
+Out[32]: 'True Red'
+
+soup.find('div', {'data-qa':'vehicle-overview-item-Style'}).li.text
+Out[37]: 'Club Automatic'
+
+soup.find('div', {'data-qa':'vehicle-overview-item-Interior Color'}).li.text
+Out[40]: 'Black W/Red Stitch'
+
+soup.find('div', {'data-qa':'vehicle-overview-item-MPG'}).li.text
+Out[43]: '21 cty / 28 hwy'
+
+soup.find('div', {'data-qa':'vehicle-overview-item-Engine'}).li.text
+Out[44]: '2.0L Inline-4 Gas'
+
+soup.find('div', {'data-qa':'vehicle-overview-item-Transmission'}).li.text
+Out[45]: 'Automatic'
+
+soup.find('div', {'data-qa':'vehicle-overview-item-Drive Type'}).li.text
+Out[46]: 'RWD'
+
+
+soup.find('div', {'data-qa':'vehicle-overview-item-Fuel Type'}).li.text
+Out[47]: 'Gas'
+
+soup.find('div', {'data-qa':'vehicle-overview-item-Mileage'}).li.text
+Out[48]: '11,840'
+
+<div class="padding-y-3" data-qa="ConditionHistory">
+condition_history = soup.find('div', {'data-qa':'ConditionHistory'})
+condition_history_cols = condition_history.find_all('div', {'data-qa':'Col'})
+
+condition_history_values = condition_history_cols[0]
+condition_history_values_lis = condition_history_values.find_all('li')
+
+    # accident check
+    condition_history_values_lis[0].text
+    Out[78]: '1 reported accidents'
+    
+    # usage
+    condition_history_values_lis[1].text
+    Out[79]: 'Personal or Rental Use'
+
+condition_history_values = condition_history_cols[1]
+condition_history_values_lis = condition_history_values.find_all('li')
+    
+    # title
+    condition_history_values_lis[0].text
+    Out[82]: 'Clean'
+    
+    # number of owners
+    condition_history_values_lis[1].text
+    Out[83]: '2'
+
+
+
+
+

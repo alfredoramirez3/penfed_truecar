@@ -1,0 +1,7 @@
+wget -E -H -k -K -p url
+
+https://penfed.truecar.com/used-cars-for-sale/listings/mazda/mx-5-miata/year-2010-max/location-san-antonio-tx/?priceRating[]=well_below_market&searchRadius=5000&transmission[]=Automatic
+
+https://penfed.truecar.com/used-cars-for-sale/listings/mazda/mx-5-miata/year-2010-max/price-1000-15000/location-san-antonio-tx/?mileageHigh=100000&priceRating[]=well_below_market&searchRadius=5000&transmission[]=Automatic
+
+wget -E -H -k -K -p url https://penfed.truecar.com/used-cars-for-sale/listings/mazda/mx-5-miata/year-2010-max/price-1000-15000/location-san-antonio-tx/?mileageHigh=100000&priceRating[]=well_below_market&searchRadius=5000&transmission[]=Automatic
